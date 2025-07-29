@@ -915,10 +915,10 @@
         <div class="label">電話番号<span class="required">必須</span></div>
         <input type="tel" id="phone" placeholder="電話番号を入力してください" oninput="saveInput('phone')">
 
-        <div class="label">ご来店回数<span class="required">必須</span></div>
+        <div class="label">新規様orリピーター様(任意)</div>
         <div class="visit-buttons">
-            <button type="button" id="firstVisit" onclick="selectVisit(this)">1回目〈30分〉</button>
-            <button type="button" id="repeatVisit" onclick="selectVisit(this)">2回目以降〈0分〉</button>
+            <button type="button" id="firstVisit" onclick="selectVisit(this)">新規様</button>
+            <button type="button" id="repeatVisit" onclick="selectVisit(this)">リピーター様</button>
         </div>
 
         <div class="label" id="course">メニューをお選びください<span class="required">必須</span></div>
@@ -968,7 +968,7 @@
                 <button type="button" id="firstirradiations" onclick="selectirradiations(this)" data-price="15000">ハイドロジェリーマスク(20分〜)</button>
                 <button type="button" id="repeatirradiations" onclick="selectirradiations(this)" data-price="15000">OMEGA light【LED＆IR】(20分〜)</button>
                 <button type="button" id="sanirradiations" onclick="selectirradiations(this)" data-price="15000">骨盤ストレッチ(20分)</button>
-                <button type="button" id="yonirradiations" onclick="selectirradiations(this)" data-price="15000">もみほぐし(60分)〉</button>
+                <button type="button" id="yonirradiations" onclick="selectirradiations(this)" data-price="15000">もみほぐし(60分)</button>
                 <button type="button" id="goirradiations" onclick="selectirradiations(this)" data-price="15000">もみほぐし(40分)</button>
                 <button type="button" id="rokuirradiations" onclick="selectirradiations(this)" data-price="15000">足ツボ(40分)</button>
                 <button type="button" id="sitiirradiations" onclick="selectirradiations(this)" data-price="15000">足ツボ(20分)</button>
@@ -1078,8 +1078,8 @@
 
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let visitTimes = {
-            '1回目': 0,
-            '2回目以降': 0
+            '新規様': 0,
+            'リピーター様': 0
         };
 
         let selectedVisitTime = 0; // 訪問回数で選択された時間
