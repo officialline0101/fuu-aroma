@@ -1660,8 +1660,10 @@
                 }
             }
 
-            // 現在の日時を取得
-            const now = new Date();
+// 現在の日時を取得
+const now = new Date();
+const oneMonthLater = new Date(now);
+oneMonthLater.setMonth(oneMonthLater.getMonth() + 1); // 1か月後
 
             // テーブルの内容を更新
             for (let i = 0; i < 7; i++) {
@@ -1691,6 +1693,13 @@
 
                     // 仮に終了時間を計算
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
+
+        // ★ 1か月以降は ✕
+        if (slotStart >= oneMonthLater) {
+            cell.textContent = '✕';
+            cell.classList.add('unavailable');
+            continue;
+        }
 
                     // 日付を跨ぐ場合は✕
                     if (slotEnd.getDate() !== slotStart.getDate()) {
